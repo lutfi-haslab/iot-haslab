@@ -1,63 +1,67 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaBeer } from "react-icons/fa";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, route, title }) => {
+  const pathname = window.location.pathname;
   return (
-    <div className="drawer drawer-side flex">
-      <div className="drawer-overlay border-r-2 w-20 sm:w-60">
+    <div className="drawer drawer-side flex bg-gray-100 ">
+      <div className="drawer-overlay bg-gray-200 w-20 sm:w-60">
         <label for="my-drawer-2" className="drawer-overlay"></label>
-        <div className="w-full p-5">
-          <img src="../assets/iot-logo.jpeg" alt="" srcset="" />
+        <div className="py-5 px-5 hidden sm:block">
+          <h1 className="text-xl font-bold">Internet of Things</h1>
+        </div>
+        <div className="flex justify-center items-center py-5 sm:hidden">
+          <h1 className="text-xl font-bold">IoT</h1>
         </div>
         {/* mobile */}
-        <ul className="flex -mt-[10px] menu bg-base-100 text-base-content visible sm:invisible">
-          <li className="self-center">
-            <Link to={"/detail"}>
-              <ion-icon name="apps-outline" size="large"></ion-icon>
-            </Link>
-          </li>
-          <li className="self-center">
-            <a>
-              <ion-icon name="apps-outline" size="large"></ion-icon>
-            </a>
-          </li>
-          <li className="self-center">
-            <a>
-              <ion-icon name="apps-outline" size="large"></ion-icon>
-            </a>
-          </li>
+        <ul className="text-base-content p-2 sm:hidden">
+          {route.map((router, i) => {
+            return (
+              <li
+                className={`m-2 flex items-center px-2 py-2 rounded-xl ${
+                  pathname == router.path ? "bg-amber-600" : null
+                }`}
+                key={i}
+              >
+                <Link to={router.path}>
+                  <FaBeer
+                    className={`text-[30px] ${
+                      pathname == router.path ? "text-white" : "text-black"
+                    }`}
+                  />
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         {/* desktop */}
-        <ul className="flex -mt-[170px] menu bg-base-100 text-base-content invisible sm:visible">
-          <li className="">
-            <Link to={"/detail"}>
-              <ion-icon name="apps-outline" size="large"></ion-icon>
-              LMS
-            </Link>
-          </li>
-          <li className="">
-            <a>
-              <ion-icon name="apps-outline" size="large"></ion-icon>
-              IoT/Dashboard
-            </a>
-          </li>
-          <li className="">
-            <a>
-              <ion-icon name="apps-outline" size="large"></ion-icon>
-              IoT/Records
-            </a>
-          </li>
-          <li className="">
-            <a>
-              <ion-icon name="apps-outline" size="large"></ion-icon>
-              Blog
-            </a>
-          </li>
+        <ul className="text-base-content p-2 hidden sm:block">
+          {route.map((router, i) => {
+            return (
+              <Link to={router.path} className="text-black" key={i}>
+                <li
+                  className={`m-2 flex items-center px-5 py-3 rounded-xl ${
+                    pathname == router.path ? "bg-amber-600" : null
+                  }`}
+                >
+                  <div
+                    className={`flex flex-row space-x-2 text-xl ${
+                      pathname == router.path ? "text-white" : "text-black"
+                    }`}
+                  >
+                    <FaBeer />
+                    <p>{router.name}</p>
+                  </div>
+                </li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
-      <div className="drawer-content flex-1">
-        <div className="bg-red-300 w-full h-20 flex items-center justify-center">
-          <h1 className="font-bold text-xl">Internet of Things Platform</h1>
+      <div className="drawer-content flex-1 overflow-hidden ">
+        <div className="bg-amber-600 w-full h-20 flex items-center justify-center">
+          <h1 className="font-bold text-xl">{title}</h1>
         </div>
         <div className="py-6">{children}</div>
       </div>

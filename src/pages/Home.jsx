@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import * as mqtt from 'mqtt/dist/mqtt.min';
 const cacert = '../../broker.crt'
 
 const Home = (props) => {
+  const navigation = useNavigate()
   const [topic, setTopic] = useState("");
   const [data, setData] = useState("");
   const [terhubung, setTerhubung] = useState("");
