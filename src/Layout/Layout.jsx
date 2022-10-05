@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaBeer } from "react-icons/fa";
+import { FaBeer, FaMicrosoft } from "react-icons/fa";
 
 const Layout = ({ children, route, title }) => {
   const pathname = window.location.pathname;
@@ -27,7 +27,7 @@ const Layout = ({ children, route, title }) => {
                           pathname == router.path ? "text-white" : "text-black"
                         }`}
                       >
-                        <FaBeer />
+                        <FaMicrosoft/>
                         <p>{router.name}</p>
                       </div>
                     </li>
@@ -53,7 +53,7 @@ const Layout = ({ children, route, title }) => {
                     key={i}
                   >
                     <Link to={router.path}>
-                      <FaBeer
+                      <FaMicrosoft
                         className={`text-[30px] ${
                           pathname == router.path ? "text-white" : "text-black"
                         }`}

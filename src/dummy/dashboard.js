@@ -69,6 +69,51 @@ let chartData = [{
         tds: 150,
         temp: 30,
         date: 1655708330
+    },
+    {
+        id: 9,
+        userId: '123',
+        project: 'C',
+        ph: 8,
+        tds: 150,
+        temp: 30,
+        date: 1656093440
+    },
+    {
+        id: 10,
+        userId: '123',
+        project: 'C',
+        ph: 8,
+        tds: 150,
+        temp: 30,
+        date: 1656266240
+    },
+    {
+        id: 11,
+        userId: '123',
+        project: 'C',
+        ph: 8,
+        tds: 150,
+        temp: 30,
+        date: 1656439040
+    },
+    {
+        id: 12,
+        userId: '123',
+        project: 'C',
+        ph: 8,
+        tds: 150,
+        temp: 30,
+        date: 1656611840
+    },
+    {
+        id: 13,
+        userId: '123',
+        project: 'C',
+        ph: 7,
+        tds: 120,
+        temp: 28,
+        date: 1656784640
     }
 ]
 
@@ -130,7 +175,6 @@ const chartData2 = [{
 ];
 
 const chartOptions = {
-    title: "Temp",
     legend: {
         enabled: true,
     },

@@ -18,9 +18,9 @@ import Login from "./Auth/Login";
 import RequireAuth from "./Auth/RequireAuth";
 
 // PTKP PAGES
-import {Dashboard as DashPTKP} from "./pages/PTKP/Dashboard";
-import {Data as DataPTKP} from "./pages/PTKP/Data";
-import {Event as EventPTKP} from "./pages/PTKP/Event";
+import { Dashboard as DashPTKP } from "./pages/PTKP/Dashboard";
+import { Data as DataPTKP } from "./pages/PTKP/Data";
+import { Event as EventPTKP } from "./pages/PTKP/Event";
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
             <Route exact path="/lms" element={<Lms />} />
           </Route>
           <Route element={<RequireAuth protectedName="peruri" />}>
-          <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route exact path="/blog" element={<Blog />} />
             <Route exact path="/blog/detail/:id" element={<BlogDetail />} />
             <Route exact path="/iot/record" element={<DataRecord />} />
