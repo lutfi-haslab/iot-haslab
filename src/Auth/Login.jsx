@@ -24,7 +24,7 @@ const Login = () => {
           </label>
           <input
             type="text"
-            placeholder="Type here"
+            placeholder="ptkp"
             className="input input-bordered"
             onChange={e => setUserName(e.target.value)}
           />
@@ -35,7 +35,7 @@ const Login = () => {
           </label>
           <input
             type="password"
-            placeholder="Type here"
+            placeholder="ptkp123"
             className="input input-bordered"
             onChange={e => setPassword(e.target.value)}
           />
